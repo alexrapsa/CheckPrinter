@@ -1,6 +1,6 @@
 namespace CheckeApp.Models
 {
-    public class User
+    public class Account
     {
         public int Id { get; set; }
         public string Username { get; set; }

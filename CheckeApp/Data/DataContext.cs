@@ -10,6 +10,6 @@ namespace CheckeApp.Data
 
          public DbSet<Check> Checks { get; set; }
          public DbSet<Payee> Payees { get; set; }
-         public DbSet<User> Users { get; set; }
+         public DbSet<Account> Accounts { get; set; }
     }
 }

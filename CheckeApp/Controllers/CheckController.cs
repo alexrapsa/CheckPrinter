@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CheckeApp.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace CheckeApp.Controllers
 {
-
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CheckController : Controller
@@ -34,6 +35,15 @@ namespace CheckeApp.Controllers
             
 
             return Ok(checks);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCheck(int id)
+        {
+            var check = await _context.Checks.FirstOrDefaultAsync(x=> x.Id == id);
+            
+            return Ok(check);
         }
     }
 }

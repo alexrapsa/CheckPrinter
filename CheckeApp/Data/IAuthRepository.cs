@@ -5,8 +5,8 @@ namespace CheckeApp.Data
 {
     public interface IAuthRepository
     {
-         Task<User> Register(User user, string password);
-         Task<User> Login(string username, string password);
+         Task<Account> Register(Account user, string password);
+         Task<Account> Login(string username, string password);
          Task<bool> UserExist(string username);
     }
 }
