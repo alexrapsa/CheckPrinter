@@ -51,6 +51,7 @@ namespace CheckeApp.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(AccountForLoginDto accountForLogin)
         {
+            // throw new Exception("COMPUTER SAYS NO!!");
 
             var userFromRepo = await _repo.Login(accountForLogin.Username.ToLower(), accountForLogin.Password);
 
