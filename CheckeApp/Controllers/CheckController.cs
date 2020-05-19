@@ -28,6 +28,7 @@ namespace CheckeApp.Controllers
             _context = dataContext;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> Get()
         {
