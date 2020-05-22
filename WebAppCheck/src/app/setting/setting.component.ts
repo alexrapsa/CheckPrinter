@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./setting.component.css']
 })
 export class SettingComponent implements OnInit {
-
+  isCollapsed = false;
+  model: any = {};
   constructor() { }
 
   ngOnInit() {
+  }
+
+  submitSettings() {
+    
   }
 
 }
